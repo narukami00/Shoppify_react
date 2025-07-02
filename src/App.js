@@ -1,23 +1,15 @@
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import BagsSection from './components/BagSection';
-import AboutUs from './components/AboutUs';
-import WatchesSection from './components/WatchSection';
-import Newsletter from './components/Newsletter';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./HomePage";
+import SummerCollectionPage from "./components/SummerSection";
 
 function App() {
   return (
-    <div>
-      <Header />
-       <HeroSection />
-       <BagsSection />
-       <AboutUs />
-       <WatchesSection/>
-       <Newsletter/>
-       <Footer/>
-      {/* Other components will go here */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/summer" element={<SummerCollectionPage />} />
+      </Routes>
+    </Router>
   );
 }
 
